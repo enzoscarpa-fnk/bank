@@ -1,0 +1,15 @@
+/Users/fnk/Documents/IFOSUP 24-25/5IOBJ-1/bank/bank/obj/Debug/net8.0/bank.GeneratedMSBuildEditorConfig.editorconfig
+/Users/fnk/Documents/IFOSUP 24-25/5IOBJ-1/bank/bank/obj/Debug/net8.0/bank.AssemblyInfoInputs.cache
+/Users/fnk/Documents/IFOSUP 24-25/5IOBJ-1/bank/bank/obj/Debug/net8.0/bank.AssemblyInfo.cs
+/Users/fnk/Documents/IFOSUP 24-25/5IOBJ-1/bank/bank/obj/Debug/net8.0/bank.csproj.CoreCompileInputs.cache
+/Users/fnk/Documents/IFOSUP 24-25/5IOBJ-1/bank/bank/obj/Debug/net8.0/bank.sourcelink.json
+/Users/fnk/Documents/IFOSUP 24-25/5IOBJ-1/bank/bank/bin/Debug/net8.0/bank
+/Users/fnk/Documents/IFOSUP 24-25/5IOBJ-1/bank/bank/bin/Debug/net8.0/bank.deps.json
+/Users/fnk/Documents/IFOSUP 24-25/5IOBJ-1/bank/bank/bin/Debug/net8.0/bank.runtimeconfig.json
+/Users/fnk/Documents/IFOSUP 24-25/5IOBJ-1/bank/bank/bin/Debug/net8.0/bank.dll
+/Users/fnk/Documents/IFOSUP 24-25/5IOBJ-1/bank/bank/bin/Debug/net8.0/bank.pdb
+/Users/fnk/Documents/IFOSUP 24-25/5IOBJ-1/bank/bank/obj/Debug/net8.0/bank.dll
+/Users/fnk/Documents/IFOSUP 24-25/5IOBJ-1/bank/bank/obj/Debug/net8.0/refint/bank.dll
+/Users/fnk/Documents/IFOSUP 24-25/5IOBJ-1/bank/bank/obj/Debug/net8.0/bank.pdb
+/Users/fnk/Documents/IFOSUP 24-25/5IOBJ-1/bank/bank/obj/Debug/net8.0/bank.genruntimeconfig.cache
+/Users/fnk/Documents/IFOSUP 24-25/5IOBJ-1/bank/bank/obj/Debug/net8.0/ref/bank.dll
