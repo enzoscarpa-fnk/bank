@@ -1,19 +1,13 @@
-public class CurrentAccount
+public class CurrentAccount : Account
 {
-    private double balance;
-    public string Number { get; set; }
-    public double Balance => balance;
     public double MaxCreditLine { get; set; }
     public double CreditLineUsed { get; private set; }
-    public Person Owner { get; set; }
-    
-    public CurrentAccount(string number, double balance, double maxCreditLine, Person owner)
+
+    public CurrentAccount(string number, string type, double balance, double maxCreditLine, Person owner) : base(number, balance, owner)
     {
-        Number = number;
-        this.balance = balance;
+        Type = "Current";
         MaxCreditLine = maxCreditLine;
         CreditLineUsed = 0;
-        Owner = owner;
     }
 
     public void Withdraw(double amount)
@@ -28,12 +22,12 @@ public class CurrentAccount
             {
                 double amountToWithdraw = amount;
                 double difference = amountToWithdraw - Balance;
-                balance = 0;
+                base.Withdraw(amountToWithdraw-difference);
                 CreditLineUsed += difference;
             }
             else
             {
-                balance -= amount;
+                base.Withdraw(amount);
             }
             Console.WriteLine($"You withdrew {amount:C}.");
             Console.WriteLine($"The balance is now {Balance:C}. The credit line used is now {CreditLineUsed:C}. The credit line limit allowed is {MaxCreditLine:C}.");
@@ -48,7 +42,7 @@ public class CurrentAccount
             {
                 amount -= CreditLineUsed;
                 CreditLineUsed = 0;
-                balance += amount;
+                base.Deposit(amount);
                 Console.WriteLine($"You repaid the credit line and deposited {amount:C} to your balance.");
             }
             else
@@ -59,7 +53,7 @@ public class CurrentAccount
         }
         else
         {
-            balance += amount;
+            base.Deposit(amount);
             Console.WriteLine($"You deposited {amount:C} to your balance.");
         }
         Console.WriteLine($"The balance is now {Balance:C}. The credit line used is now {CreditLineUsed:C}. The credit line limit allowed is {MaxCreditLine:C}.");
