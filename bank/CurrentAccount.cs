@@ -1,4 +1,4 @@
-public class Account
+public class CurrentAccount
 {
     private double balance;
     public string Number { get; set; }
