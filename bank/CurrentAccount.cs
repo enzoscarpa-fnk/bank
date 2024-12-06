@@ -1,11 +1,12 @@
+namespace bank;
+
 public class CurrentAccount : Account
 {
     public double MaxCreditLine { get; set; }
     public double CreditLineUsed { get; private set; }
 
-    public CurrentAccount(string number, string type, double balance, double maxCreditLine, Person owner) : base(number, balance, owner)
+    public CurrentAccount(string number, double balance, double maxCreditLine, Person owner) : base(number, balance, owner)
     {
-        Type = "Current";
         MaxCreditLine = maxCreditLine;
         CreditLineUsed = 0;
     }
@@ -57,5 +58,15 @@ public class CurrentAccount : Account
             Console.WriteLine($"You deposited {amount:C} to your balance.");
         }
         Console.WriteLine($"The balance is now {Balance:C}. The credit line used is now {CreditLineUsed:C}. The credit line limit allowed is {MaxCreditLine:C}.");
+    }
+    
+    protected override double CalculateInterests()
+    {
+        if (balance <= 0)
+        {
+            return CreditLineUsed * 1.0975;
+        }
+        
+        return balance * 1.03;
     }
 }

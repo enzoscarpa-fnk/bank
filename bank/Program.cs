@@ -1,7 +1,10 @@
 ﻿// Exercice banque
+
+using bank;
+
 Person p1 = new Person("Jean", "Paroit", 12, 03, 1993);
-CurrentAccount ca1 = new CurrentAccount("BE93001938277309", "Current", 12900, 1000, p1);
-SavingsAccount sa1 = new SavingsAccount("BE60929200108556", "Savings", 1000, p1, DateTime.MinValue);
+CurrentAccount ca1 = new CurrentAccount("BE93001938277309", 12900, 1000, p1);
+SavingsAccount sa1 = new SavingsAccount("BE60929200108556", 1000, p1, DateTime.MinValue);
 Bank.AddAccount(ca1);
 Bank.AddAccount(sa1);
 p1.ShowPersonInfo();
@@ -25,7 +28,7 @@ void menu()
         switch (inputM1)
         {
             case 1:
-                Console.WriteLine("| [1] Show Accounts | [2] Add Account | [3] Delete Account | [4] Show Total Balance | [5] Back |");
+                Console.WriteLine("| [1] Show Accounts | [2] Add Account | [3] Delete Account | [4] Show Total Balance | [5] Calculate Interests | [6] Back |");
                 var inputIsNumberM2 = int.TryParse(Console.ReadLine(), out int inputM2);
                 if (!inputIsNumberM2)
                 {
@@ -40,7 +43,7 @@ void menu()
                     case 2:
                         Console.WriteLine($"What is the number of the new account?");
                         string addAccountNumber = Console.ReadLine();
-                        CurrentAccount currentAccount = new CurrentAccount(addAccountNumber, "Current", 0, 1000, p1);
+                        CurrentAccount currentAccount = new CurrentAccount(addAccountNumber, 0, 1000, p1);
                         Bank.AddAccount(currentAccount);
                         Console.WriteLine($"Your account number {currentAccount.Number} has been created.");
                         break;
@@ -53,6 +56,9 @@ void menu()
                         Bank.ShowTotalBalance();
                         break;
                     case 5:
+                        Bank.CalculateInterests();
+                        break;
+                    case 6:
                         menu();
                         break;
                 }

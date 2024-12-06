@@ -1,16 +1,12 @@
-public class Account
+using bank;
+
+public abstract class Account : IBankAccount
 {
-    protected string type { get; private set; }
     protected double balance { get; private set; }
-    public string Number { get; set; }
-    public string Type
-    {
-        get => type;
-        set => type = value;
-    }
+    public string Number { get; }
 
     public double Balance => balance;
-    public Person Owner { get; set; }
+    public Person Owner { get; }
     
     public Account(string number, double balance, Person owner)
     {
@@ -27,5 +23,12 @@ public class Account
     public void Deposit(double amount)
     {
         balance += amount;
+    }
+
+    protected abstract double CalculateInterests();
+
+    public object ApplyInterests()
+    {
+        return CalculateInterests();
     }
 }

@@ -2,9 +2,8 @@ public class SavingsAccount : Account
 {
     public DateTime DateLastWithdraw { get; private set; }
     
-    public SavingsAccount(string number, string type, double balance, Person owner, DateTime dateLastWithdraw) : base(number, balance, owner)
+    public SavingsAccount(string number, double balance, Person owner, DateTime dateLastWithdraw) : base(number, balance, owner)
     {
-        Type = "Savings";
         DateLastWithdraw = dateLastWithdraw;
     }
     
@@ -27,5 +26,10 @@ public class SavingsAccount : Account
         base.Deposit(amount);
         Console.WriteLine($"You deposited {amount:C} to your balance.");
         Console.WriteLine($"The balance is now {Balance:C}.");
+    }
+
+    protected override double CalculateInterests()
+    {
+        return balance * 1.045;
     }
 }
